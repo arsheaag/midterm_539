@@ -1,0 +1,182 @@
+/* Arsheaa Garg, GSI: Rongqi */
+
+/* mobile view */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2d28;
+    background-color: #FDF3E7;
+    line-height: 1.5;
+}
+
+/* style the header */
+header {
+    position: relative;
+    background-color: #234f3f;
+    color: #ffffff;
+    padding: 16px;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 0;
+    text-align: center;
+}
+
+/* main content and introduction */
+main {
+    padding: 16px;
+}
+
+.intro {
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 28px;
+    text-align: center;
+}
+
+/* grid  */
+.destination-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+}
+
+/* stylingg each destination card */
+.card {
+    padding: 16px;
+    background-color: #ffffff;
+    border: 3px solid #52796f;
+    color: black;
+}
+
+.card h3 {
+    margin: 0;
+    color: black;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+.card a:hover,
+.card a:focus {
+    background-color: #ffcc33;
+}
+
+/* footer */
+.site-footer {
+    padding: 24px 16px;
+    color: #ffffff;
+    background-color: #12372d;
+    text-align: center;
+}
+
+.site-footer a {
+    color: #ffffff;
+}
+
+/* styling skip to main */
+.skip-link {
+    position: absolute;
+    left: -1000px;
+    height: 30px;
+    background-color: #F0ECCE;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    left: 10px;
+    top: 40px;
+    z-index:1000;
+}
+
+/* for view 2  */
+
+@media screen and (min-width: 600px) {
+    body {
+        background-color: #F39C12;
+    }
+
+    .destination-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        border: 5px dotted black;
+    }
+
+    .card:nth-child(even) {
+        background-color: #F4D8C6;
+    }
+}
+
+/* view 3 */
+
+@media screen and (min-width: 770px) {
+
+    /* added later to make 'places to visit' left-align in later views */
+    .intro h2 {
+        text-align: left;
+    }
+    /* --- */
+
+    body {
+        background-color: #E67E22;
+    }
+
+    h1,
+    .intro {
+        text-align: left;
+    }
+
+    .destination-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .card {
+        grid-column: span 2;
+        width: 75%;
+    }
+
+    .card:nth-child(odd) {
+        grid-column: 1 / span 2;
+        justify-self: start;
+    }
+
+    .card:nth-child(even) {
+        grid-column: 4 / span 2;
+        justify-self: end;
+    }
+}
+
+/* view 4 */
+
+@media screen and (min-width: 1020px) {
+    body {
+        background-color: #A3C6B2;
+    }
+
+    .destination-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .card {
+        grid-column: span 2;
+        width: 75%;
+        border: 3px double black;
+        justify-self: center;
+    }
+
+    .card:nth-child(odd),
+    .card:nth-child(even) {
+        grid-column: span 2;
+        justify-self: center;
+    }
+}
